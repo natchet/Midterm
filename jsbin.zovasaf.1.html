@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2021 by natchet (http://jsbin.com/zovasaf/1/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+	<head>
+		<title>Module 04</title>
+        <style type="text/css">
+       <link rel="stylesheet" type="text/css" href="name-of-your-css-file.css">
+		</style>
+        <meta charset="UTF-8">
+            <meta name="description" content="Free Web tutorials">
+            <meta name="keywords" content="HTML, CSS, JavaScript">
+            <meta name="author" content="John Doe">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style id="jsbin-css">
+<style type="text/css">
+			* {
+				font-family: Arial, Verdana, sans-serif;
+				color: #665544;
+				text-align: center;}
+			body {
+				width: 90%;
+				margin: 0 auto;
+                text-align:center;
+                background-color: #8CC63E;
+                background-image: url("https://www.freecodecamp.org/news/content/images/2020/04/w-qjCHPZbeXCQ-unsplash.jpg");
+                background-size:cover;
+                background-position: right;
+                background-repeat:no-repeat;}
+			#content {
+				overflow: auto;
+                text-align: center;
+                background-color: lightyellow}
+			#nav, #feature, #footer {
+				margin: 1%;
+                }
+			.column1 {
+				width: 31.3%;
+				float: left;
+				margin: 1%;
+                text-align: center;
+                 background-color: lightblue;}
+            .column2  {
+				width: 31.3%;
+				float: left;
+				margin: 1%;
+                 text-align: center;
+                 background-color: lightgreen;}
+			.column3 {
+				margin-right: 0%;
+                width: 31.3%;
+				float: left;
+				margin: 1%;
+                 text-align: center;
+                background-color: yellow;}
+             .column3 {
+				margin-right: 0%;}
+			li {
+				display: inline;
+				padding: 0.5em;
+                text-align:center;}
+			#nav {
+				background-color: coral;
+				padding: 0.5em 0;
+                text-align:center;}
+            #footer {
+				background-color: lightcoral;
+				padding: 0.5em 0;
+                text-align:center;}
+			#feature, .article {
+				height: 10em;
+				margin-bottom: 1em;
+              }
+            #feature {background-color: lightpink;
+                background-image: url("data:image/png;base64,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");
+                background-size:contain;
+                background-position: right;
+                background-repeat:no-repeat;
+                text-align:center;}
+ 
+		</style>
+
+
+</style>
+</head>
+	<body>
+		<div id="header">
+			<h1>Logo</h1>
+			<div id="nav">
+				<ul>
+					<li><a href="">Home</a></li>
+					<li><a href="">Products</a></li>
+					<li><a href="">Services</a></li>
+					<li><a href="">About</a></li>
+					<li><a href="">Contact</a></li>
+				</ul>
+			</div>
+		</div>
+		<div id="content">
+			<div id="feature">
+				<p>Feature</p>
+			</div>
+			<div class="article column1">
+				<p>Column One</p>
+			</div>
+			<div class="article column2">
+				<p>Column Two</p>
+			</div>
+			<div class="article column3">
+				<p>Column Three</p>
+			</div>
+		</div>
+		<div id="footer">
+			<p>&copy; Copyright 2011</p>
+		</div>
+	<script id="jsbin-javascript">
+var table = 'value entered by user'
+
+var msg = '<h2>Multiplication Table</h2>';
+
+if (person != null) {
+  document.getElementById("demo").innerHTML =
+  "Hello " + person + "! How are you today?";
+}
+</script>
+</body>
+</html>
